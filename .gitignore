@@ -1,7 +1,19 @@
-.next
-node_modules
-dist
-out
-coverage
-*.log
-.DS_Store
+# Dokumen Pribadi (Sesuai kasus Anda)
+*.docx
+~$*.docx
+
+# Dependencies (Sangat penting agar tidak berat)
+node_modules/
+
+# Hasil Build Next.js
+.next/
+out/
+build/
+
+# File Environment (Berisi kunci rahasia/password)
+.env*.local
+
+# Log sistem
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
