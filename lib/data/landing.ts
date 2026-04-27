@@ -9,8 +9,8 @@ import type {
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "#home" },
-  { label: "WhyUs", href: "#whyus" },
   { label: "Attractions", href: "#attractions" },
+  { label: "WhyUs", href: "#whyus" },
   { label: "Packages", href: "#packages" },
   { label: "Gallery", href: "#gallery" },
   { label: "FAQ", href: "#faq" }
