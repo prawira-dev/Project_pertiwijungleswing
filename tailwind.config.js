@@ -36,6 +36,10 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))"
         }
       },
+      fontFamily: {
+        sans: ["var(--font-sans)", "sans-serif"],
+        heading: ["var(--font-heading)", "sans-serif"]
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -60,7 +64,7 @@ module.exports = {
       },
       backgroundImage: {
         "hero-overlay":
-          "linear-gradient(180deg, rgba(4, 26, 58, 0) 0%, rgba(4, 26, 58, 0.6) 60%, rgba(4, 26, 58, 1) 100%)",
+          "linear-gradient(180deg, rgba(4, 26, 58, 0) 0%, rgba(4, 26, 58, 0.2) 60%, rgba(4, 26, 58, 0.5) 100%)",
         "card-sheen":
           "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 44%)"
       }

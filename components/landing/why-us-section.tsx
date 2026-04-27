@@ -29,7 +29,7 @@ export function WhyUsSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="section-space relative">
+    <section id="whyus" className="section-space relative">
       <div className="container-shell space-y-12">
         <SectionReveal>
           <SectionHeading
@@ -52,8 +52,8 @@ export function WhyUsSection() {
                       <Icon className="size-5" />
                     </div>
                     <div className="space-y-3">
-                      <h3 className="text-xl font-semibold">{item.title}</h3>
-                      <p className="leading-7 text-muted-foreground">{item.description}</p>
+                      <h3 className="text-xl font-semibold">{t(`whyus.point.${item.id}.title` as any) || item.title}</h3>
+                      <p className="leading-7 text-muted-foreground">{t(`whyus.point.${item.id}.description` as any) || item.description}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -73,9 +73,9 @@ export function WhyUsSection() {
                     <div className="mb-4 inline-flex rounded-full bg-white/8 p-3 text-primary">
                       <Icon className="size-5" />
                     </div>
-                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                    <h3 className="text-lg font-semibold">{t(`whyus.point.${item.id}.title` as any) || item.title}</h3>
                     <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                      {item.description}
+                      {t(`whyus.point.${item.id}.description` as any) || item.description}
                     </p>
                   </div>
                 );

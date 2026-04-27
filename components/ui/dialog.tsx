@@ -17,7 +17,10 @@ const DialogOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Overlay
     ref={ref}
-    className={cn("fixed inset-0 z-50 bg-black/70 backdrop-blur-md", className)}
+    className={cn("fixed inset-0 z-50 bg-black/50 backdrop-blur-sm", className)}
+    style={{
+      animation: "dialogOverlayShow 350ms cubic-bezier(0.16, 1, 0.3, 1)"
+    }}
     {...props}
   />
 ));
@@ -32,13 +35,16 @@ const DialogContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed left-1/2 top-1/2 z-50 w-[min(96vw,72rem)] -translate-x-1/2 -translate-y-1/2 rounded-[2rem] border border-white/10 bg-[#0c1f18] p-0 shadow-2xl shadow-black/40",
+        "fixed left-1/2 top-1/2 z-50 w-[min(96vw,72rem)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-gray-200 bg-white p-0 shadow-2xl overflow-hidden",
         className
       )}
+      style={{
+        animation: "dialogContentShow 400ms cubic-bezier(0.16, 1, 0.3, 1)"
+      }}
       {...props}
     >
       {children}
-      <DialogClose className="absolute right-5 top-5 rounded-full bg-white/10 p-2 text-foreground/75 transition hover:bg-white/15 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+      <DialogClose className="absolute right-4 top-4 rounded-full bg-gray-100 p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring z-20">
         <X className="size-4" />
         <span className="sr-only">Close</span>
       </DialogClose>

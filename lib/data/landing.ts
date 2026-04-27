@@ -9,6 +9,7 @@ import type {
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "#home" },
+  { label: "WhyUs", href: "#whyus" },
   { label: "Attractions", href: "#attractions" },
   { label: "Packages", href: "#packages" },
   { label: "Gallery", href: "#gallery" },
@@ -17,35 +18,35 @@ export const navItems: NavItem[] = [
 
 export const attractionItems: Attraction[] = [
   {
-    id: "extreme-swing",
-    title: "The Extreme Swing",
-    subtitle: "Ayunan tunggal dengan valley drop yang paling dramatis.",
-    shortDescription: "A signature rush with a panoramic jungle backdrop.",
+    id: "koipond-boat",
+    title: "Koi Pond Boat",
+    subtitle: "Lorem ipsum dolor sit amet", /* masukan deskripsi singkat untuk attraction */
+    shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan harga per orang untuk attraction */
     description:
-      "Built for thrill-seekers, The Extreme Swing lifts guests above the valley for a cinematic arc over Ubud's lush canopy. The experience is ideal for travelers who want a defining hero moment and memorable photos in one ride.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan deskripsi singkat untuk attraction */
     safetyNotes: [
-      "Minimum height recommendation: 120 cm.",
-      "Harness fitting and operator briefing are mandatory before takeoff.",
-      "Not recommended for guests with severe vertigo or specific medical restrictions."
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
+      "Please follow queue markings for safe movement around the platform.",
+      "Flash-friendly angles are available during shaded sessions."
     ],
-    reservationLabel: "Add Extreme Swing",
+    reservationLabel: "Add Koi Pond Boat",
     gradient:
       "linear-gradient(135deg, rgba(8,58,47,0.95), rgba(29,110,89,0.75), rgba(238,202,104,0.45))",
     gallery: [
       {
-        id: "extreme-1",
+        id: "koipond-1", /* Title Gallery */
         title: "Launch platform",
         gradient:
           "linear-gradient(135deg, rgba(16,88,73,0.95), rgba(66,138,111,0.78))"
       },
       {
-        id: "extreme-2",
+        id: "koipond-2", /* Title Gallery */
         title: "Valley arc",
         gradient:
           "linear-gradient(135deg, rgba(17,43,33,0.95), rgba(44,101,73,0.78))"
       },
       {
-        id: "extreme-3",
+        id: "koipond-3", /* Title Gallery */
         title: "Hero capture",
         gradient:
           "linear-gradient(135deg, rgba(96,72,21,0.92), rgba(226,186,78,0.55))"
@@ -53,35 +54,36 @@ export const attractionItems: Attraction[] = [
     ]
   },
   {
-    id: "couple-swing",
-    title: "Couple Swing",
-    subtitle: "Pilihan romantis untuk dua tamu dalam satu momen.",
-    shortDescription: "Designed for shared adrenaline and sweeping photo angles.",
+    id: "jungle-swing",
+    title: "Jungle Swing",
+    subtitle: "Lorem ipsum dolor sit amet", /* masukan deskripsi singkat untuk attraction */
+    shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan harga per orang untuk attraction */
     description:
-      "The Couple Swing blends scenic spectacle with a more intimate experience, making it perfect for honeymooners, couples, and travel companions who want synchronized motion above the jungle.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan deskripsi singkat untuk attraction */
     safetyNotes: [
-      "Best suited for two guests booking the same time slot.",
-      "Combined rider load must stay within operator safety thresholds.",
-      "Closed-toe footwear is strongly encouraged for boarding comfort."
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
+      "Please follow queue markings for safe movement around the platform.",
+      "Flash-friendly angles are available during shaded sessions."
     ],
-    reservationLabel: "Add Couple Swing",
+    reservationLabel: "Add Jungle Swing",
     gradient:
       "linear-gradient(135deg, rgba(43,54,35,0.95), rgba(97,123,77,0.82), rgba(207,162,91,0.4))",
     gallery: [
       {
-        id: "couple-1",
-        title: "Twin setup",
+        id: "couple-1", /* Title Gallery */
+        title: "Launch platform",
         gradient:
           "linear-gradient(135deg, rgba(56,68,41,0.95), rgba(112,131,88,0.75))"
       },
       {
-        id: "couple-2",
+        id: "couple-2", /* Title Gallery */
         title: "Golden hour ride",
         gradient:
           "linear-gradient(135deg, rgba(120,88,34,0.95), rgba(224,175,88,0.52))"
       },
       {
-        id: "couple-3",
+        id: "couple-3", /* Title Gallery */
         title: "Photo frame",
         gradient:
           "linear-gradient(135deg, rgba(17,43,33,0.95), rgba(65,97,63,0.75))"
@@ -89,35 +91,72 @@ export const attractionItems: Attraction[] = [
     ]
   },
   {
-    id: "bird-nest",
-    title: "Bird Nest Spot",
-    subtitle: "Photo spot favorit untuk editorial tropical look.",
-    shortDescription: "Soft, elevated framing for standout travel portraits.",
+    id: "harmony-swing",
+    title: "Harmony Swing",
+    subtitle: "Lorem ipsum dolor sit amet", /* masukan deskripsi singkat untuk attraction */
+    shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan short description untuk attraction */
     description:
-      "The Bird Nest Spot offers a calmer attraction with crafted natural textures, layered greenery, and a polished angle for solo portraits, couple moments, or content-focused shoots.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan deskripsi singkat untuk attraction */
     safetyNotes: [
-      "Designed for seated photo moments rather than high-adrenaline movement.",
-      "Queue rotation may apply during peak afternoon traffic.",
-      "Staff can assist with personal phone capture positioning."
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
+      "Please follow queue markings for safe movement around the platform.",
+      "Flash-friendly angles are available during shaded sessions."
     ],
-    reservationLabel: "Add Bird Nest",
+    reservationLabel: "Add Harmony Swing",
+    gradient:
+      "linear-gradient(135deg, rgba(24,24,24,0.96), rgba(70,88,61,0.8), rgba(219,188,88,0.28))",
+    gallery: [
+      {
+        id: "harmony-1",
+        title: "Iconic profile",
+        gradient:
+          "linear-gradient(135deg, rgba(24,24,24,0.98), rgba(74,92,65,0.72))"
+      },
+      {
+        id: "harmony-2",
+        title: "Jungle contrast",
+        gradient:
+          "linear-gradient(135deg, rgba(30,52,40,0.95), rgba(83,111,84,0.76))"
+      },
+      {
+        id: "harmony-3",
+        title: "Signature post",
+        gradient:
+          "linear-gradient(135deg, rgba(126,102,41,0.94), rgba(223,190,91,0.55))"
+      }
+    ]
+  },
+  {
+    id: "love-bed",
+    title: "Love Bed",
+    subtitle: "Lorem ipsum dolor sit amet", /* masukan deskripsi singkat untuk attraction */
+    shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan short description untuk attraction */
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan deskripsi singkat untuk attraction */
+    safetyNotes: [
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
+      "Please follow queue markings for safe movement around the platform.",
+      "Flash-friendly angles are available during shaded sessions."
+    ],
+    reservationLabel: "Add Love Bed",
     gradient:
       "linear-gradient(135deg, rgba(92,66,20,0.93), rgba(176,127,53,0.7), rgba(55,80,41,0.72))",
     gallery: [
       {
-        id: "nest-1",
+        id: "lovebed-1",
         title: "Editorial frame",
         gradient:
           "linear-gradient(135deg, rgba(136,97,33,0.96), rgba(208,155,62,0.58))"
       },
       {
-        id: "nest-2",
+        id: "lovebed-2",
         title: "Natural textures",
         gradient:
           "linear-gradient(135deg, rgba(43,64,32,0.95), rgba(94,125,68,0.7))"
       },
       {
-        id: "nest-3",
+        id: "lovebed-3",
         title: "Portrait angle",
         gradient:
           "linear-gradient(135deg, rgba(90,66,21,0.95), rgba(160,128,64,0.6))"
@@ -125,35 +164,146 @@ export const attractionItems: Attraction[] = [
     ]
   },
   {
-    id: "gorilla-face",
-    title: "Gorilla Face",
-    subtitle: "Instalasi ikonik untuk foto dramatis dan playful.",
-    shortDescription: "A bold backdrop that gives your gallery an instant signature shot.",
+    id: "paradise-stairs",
+    title: "Paradise Stairs",
+    subtitle: "Photo spot favorit untuk editorial tropical look.",
+    shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan short description untuk attraction */
     description:
-      "One of the most recognizable photo points on site, Gorilla Face creates contrast against the greenery and helps guests capture a visually distinct, story-worthy stop beyond the swing itself.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan deskripsi singkat untuk attraction */
     safetyNotes: [
-      "Spot access is staff-managed during heavy crowd periods.",
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
       "Please follow queue markings for safe movement around the platform.",
       "Flash-friendly angles are available during shaded sessions."
     ],
-    reservationLabel: "Add Gorilla Face",
+    reservationLabel: "Add Paradise Stairs",
+    gradient:
+      "linear-gradient(135deg, rgba(92,66,20,0.93), rgba(176,127,53,0.7), rgba(55,80,41,0.72))",
+    gallery: [
+      {
+        id: "paradise-1",
+        title: "Editorial frame",
+        gradient:
+          "linear-gradient(135deg, rgba(136,97,33,0.96), rgba(208,155,62,0.58))"
+      },
+      {
+        id: "paradise-2",
+        title: "Natural textures",
+        gradient:
+          "linear-gradient(135deg, rgba(43,64,32,0.95), rgba(94,125,68,0.7))"
+      },
+      {
+        id: "paradise-3",
+        title: "Portrait angle",
+        gradient:
+          "linear-gradient(135deg, rgba(90,66,21,0.95), rgba(160,128,64,0.6))"
+      }
+    ]
+  },
+  {
+    id: "bird-nest",
+    title: "Bird Nest",
+    subtitle: "Photo spot favorit untuk editorial tropical look.",
+    shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan harga per orang untuk attraction */
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan deskripsi singkat untuk attraction */
+    safetyNotes: [
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
+      "Please follow queue markings for safe movement around the platform.",
+      "Flash-friendly angles are available during shaded sessions."
+    ],
+    reservationLabel: "Add Bird Nest",
+    gradient:
+      "linear-gradient(135deg, rgba(92,66,20,0.93), rgba(176,127,53,0.7), rgba(55,80,41,0.72))",
+    gallery: [
+      {
+        id: "bird-nest-1",
+        title: "Editorial frame",
+        gradient:
+          "linear-gradient(135deg, rgba(136,97,33,0.96), rgba(208,155,62,0.58))"
+      },
+      {
+        id: "bird-nest-2",
+        title: "Natural textures",
+        gradient:
+          "linear-gradient(135deg, rgba(43,64,32,0.95), rgba(94,125,68,0.7))"
+      },
+      {
+        id: "bird-nest-3",
+        title: "Portrait angle",
+        gradient:
+          "linear-gradient(135deg, rgba(90,66,21,0.95), rgba(160,128,64,0.6))"
+      }
+    ]
+  },
+  {
+    id: "onion-nest",
+    title: "Onion Nest",
+    subtitle: "Photo spot favorit untuk editorial tropical look.",
+    shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan harga per orang untuk attraction */
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan deskripsi singkat untuk attraction */
+    safetyNotes: [
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
+      "Please follow queue markings for safe movement around the platform.",
+      "Flash-friendly angles are available during shaded sessions."
+    ],
+    reservationLabel: "Add Onion Nest",
+    gradient:
+      "linear-gradient(135deg, rgba(92,66,20,0.93), rgba(176,127,53,0.7), rgba(55,80,41,0.72))",
+    gallery: [
+      {
+        id: "onion-nest-1",
+        title: "Editorial frame",
+        gradient:
+          "linear-gradient(135deg, rgba(136,97,33,0.96), rgba(208,155,62,0.58))"
+      },
+      {
+        id: "onion-nest-2",
+        title: "Natural textures",
+        gradient:
+          "linear-gradient(135deg, rgba(43,64,32,0.95), rgba(94,125,68,0.7))"
+      },
+      {
+        id: "onion-nest-3",
+        title: "Portrait angle",
+        gradient:
+          "linear-gradient(135deg, rgba(90,66,21,0.95), rgba(160,128,64,0.6))"
+      }
+    ]
+  },
+  {
+    id: "heart-nest",
+    title: "Heart Nest",
+    subtitle: "Lorem ipsum dolor sit amet", /* masukan deskripsi singkat untuk attraction */
+    shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan short description untuk attraction */
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", /* masukan deskripsi singkat untuk attraction */
+    safetyNotes: [
+      "Lorem ipsum dolor sit amet", /* masukan safety notes singkat untuk attraction */
+      "Please follow queue markings for safe movement around the platform.",
+      "Flash-friendly angles are available during shaded sessions.",
+    ],
+    reservationLabel: "Add Heart Nest",
     gradient:
       "linear-gradient(135deg, rgba(24,24,24,0.96), rgba(70,88,61,0.8), rgba(219,188,88,0.28))",
     gallery: [
       {
-        id: "gorilla-1",
+        id: "heart-nest-1",
         title: "Iconic profile",
         gradient:
           "linear-gradient(135deg, rgba(24,24,24,0.98), rgba(74,92,65,0.72))"
       },
       {
-        id: "gorilla-2",
+        id: "heart-nest-2",
         title: "Jungle contrast",
         gradient:
           "linear-gradient(135deg, rgba(30,52,40,0.95), rgba(83,111,84,0.76))"
       },
       {
-        id: "gorilla-3",
+        id: "heart-nest-3",
         title: "Signature post",
         gradient:
           "linear-gradient(135deg, rgba(126,102,41,0.94), rgba(223,190,91,0.55))"
@@ -337,10 +487,10 @@ export const faqItems: FaqItem[] = [
 
 export const contactInfo = {
   description:
-    "Pertiwi Jungle Swing menghadirkan pengalaman ayunan, photo spot, dan panorama lembah Ubud dalam satu destinasi yang siap mengubah rasa penasaran menjadi booking.",
-  phone: "+62 811-3877-221",
-  email: "hello@pertiwijungleswing.com",
-  whatsapp: "628113877221",
-  mapsUrl: "https://maps.google.com/?q=Pertiwi+Jungle+Swing+Ubud",
-  instagramUrl: "https://instagram.com/pertiwijungleswing"
+    "Pertiwi Jungle Swing menghadirkan pengalaman ayunan, photo spot, dan panorama lembah Ubud dalam satu destinasi yang siap mengubah rasa penasaran menjadi kenyataan.",
+  phone: "+62 81338597825", /*insert phone number here*/
+  email: "[EMAIL_ADDRESS]", /*insert email here*/
+  whatsapp: "6281338597825", /*insert whatsapp here*/
+  mapsUrl: "https://maps.app.goo.gl/2yanGY9i9RKQfhZSA", /*insert maps url here*/
+  instagramUrl: "https://www.instagram.com/pertiwijungleswing/" /*insert instagram url here*/
 };
