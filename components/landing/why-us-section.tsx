@@ -62,27 +62,55 @@ export function WhyUsSection() {
           })}
         </div>
 
-        <SectionReveal delay={0.12}>
-          <Card>
-            <CardContent className="grid gap-5 p-6 sm:grid-cols-3">
-              {inclusionPoints.map((item) => {
-                const Icon = iconMap[item.icon];
-
-                return (
-                  <div key={item.id} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
-                    <div className="mb-4 inline-flex rounded-full bg-white/8 p-3 text-primary">
-                      <Icon className="size-5" />
+        <div className="pt-10">
+          <SectionReveal delay={0.1}>
+            <div className="rounded-[2.5rem] bg-muted/50 border border-border p-8 md:p-12">
+              <div className="flex flex-col md:flex-row gap-10 items-start md:items-center mb-12">
+                <div className="space-y-4 max-w-md">
+                  <h2 className="text-3xl font-bold tracking-tight">
+                    {t("whyus.inclusions.title" as any)}
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t("whyus.inclusions.subtitle" as any)}
+                  </p>
+                </div>
+                <div className="hidden md:block h-20 w-px bg-border ml-auto mr-auto" />
+                <div className="flex flex-wrap gap-3 md:max-w-sm">
+                  {inclusionPoints.map((item) => (
+                    <div
+                      key={item.id}
+                      className="inline-flex items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-medium border border-border shadow-sm"
+                    >
+                      <div className="size-2 rounded-full bg-primary" />
+                      {t(`whyus.point.${item.id}.title` as any) || item.title}
                     </div>
-                    <h3 className="text-lg font-semibold">{t(`whyus.point.${item.id}.title` as any) || item.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                      {t(`whyus.point.${item.id}.description` as any) || item.description}
-                    </p>
-                  </div>
-                );
-              })}
-            </CardContent>
-          </Card>
-        </SectionReveal>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+                {inclusionPoints.map((item, index) => {
+                  const Icon = iconMap[item.icon];
+                  return (
+                    <SectionReveal key={item.id} delay={0.2 + index * 0.05}>
+                      <div className="group space-y-4">
+                        <div className="inline-flex rounded-2xl bg-background p-4 text-primary shadow-sm ring-1 ring-border transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
+                          <Icon className="size-6" />
+                        </div>
+                        <div className="space-y-2">
+                          <h4 className="font-bold">{t(`whyus.point.${item.id}.title` as any) || item.title}</h4>
+                          <p className="text-xs leading-relaxed text-muted-foreground line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
+                            {t(`whyus.point.${item.id}.description` as any) || item.description}
+                          </p>
+                        </div>
+                      </div>
+                    </SectionReveal>
+                  );
+                })}
+              </div>
+            </div>
+          </SectionReveal>
+        </div>
       </div>
     </section>
   );

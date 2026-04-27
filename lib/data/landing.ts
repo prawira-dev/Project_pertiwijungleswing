@@ -341,9 +341,15 @@ export const inclusionPoints: ValuePoint[] = [
     icon: "cup"
   },
   {
+    id: "safety-gear",
+    title: "Safety Equipment",
+    description: "Standard international safety gear provided for all rides.",
+    icon: "shield"
+  },
+  {
     id: "insurance",
     title: "Insurance Coverage",
-    description: "Basic activity protection is included with every qualifying booking.",
+    description: "Basic activity protection is included with every booking.",
     icon: "sparkles"
   },
   {
@@ -351,6 +357,12 @@ export const inclusionPoints: ValuePoint[] = [
     title: "Secure Locker",
     description: "Titip barang tetap praktis dan aman selama Anda menikmati wahana.",
     icon: "lock"
+  },
+  {
+    id: "photo-spots",
+    title: "Photo Spots Access",
+    description: "Full access to all iconic photo spots around the valley.",
+    icon: "camera"
   }
 ];
 
@@ -410,51 +422,51 @@ export const timeSlots = [
 export const galleryItems: GalleryItem[] = [
   {
     id: "gallery-1",
-    caption: "Morning glide above the canopy",
+    caption: "Koi Pond Boat",
     location: "Ubud, Bali",
     postUrl: "https://instagram.com/pertiwijungleswing",
-    gradient:
-      "linear-gradient(135deg, rgba(19,53,42,0.96), rgba(42,109,88,0.76), rgba(229,188,90,0.38))"
+    gradient: "linear-gradient(135deg, rgba(19,53,42,0.96), rgba(42,109,88,0.76))",
+    imageUrl: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: "gallery-2",
-    caption: "Bird Nest editorial mood",
-    location: "Photo Spot",
+    caption: "Lorem Ipsum",
+    location: "Ubud, Bali",
     postUrl: "https://instagram.com/pertiwijungleswing",
-    gradient:
-      "linear-gradient(135deg, rgba(122,85,27,0.96), rgba(210,162,74,0.58), rgba(48,73,39,0.72))"
+    gradient: "linear-gradient(135deg, rgba(122,85,27,0.96), rgba(210,162,74,0.58))",
+    imageUrl: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: "gallery-3",
-    caption: "Couple swing at golden hour",
-    location: "Main Valley Deck",
+    caption: "Lorem Ipsum",
+    location: "Ubud, Bali",
     postUrl: "https://instagram.com/pertiwijungleswing",
-    gradient:
-      "linear-gradient(135deg, rgba(31,40,28,0.96), rgba(99,117,78,0.75), rgba(228,194,102,0.32))"
+    gradient: "linear-gradient(135deg, rgba(31,40,28,0.96), rgba(99,117,78,0.75))",
+    imageUrl: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: "gallery-4",
-    caption: "Signature Gorilla Face frame",
-    location: "Icon Spot",
+    caption: "Lorem Ipsum",
+    location: "Ubud, Bali",
     postUrl: "https://instagram.com/pertiwijungleswing",
-    gradient:
-      "linear-gradient(135deg, rgba(23,23,23,0.98), rgba(71,88,62,0.8), rgba(215,176,81,0.24))"
+    gradient: "linear-gradient(135deg, rgba(23,23,23,0.98), rgba(71,88,62,0.8))",
+    imageUrl: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: "gallery-5",
-    caption: "Harnessed and ready to launch",
-    location: "Safety Zone",
+    caption: "Lorem Ipsum",
+    location: "Ubud, Bali",
     postUrl: "https://instagram.com/pertiwijungleswing",
-    gradient:
-      "linear-gradient(135deg, rgba(17,43,33,0.96), rgba(64,125,102,0.75), rgba(241,205,112,0.34))"
+    gradient: "linear-gradient(135deg, rgba(17,43,33,0.96), rgba(64,125,102,0.75))",
+    imageUrl: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: "gallery-6",
-    caption: "Jungle textures from every angle",
-    location: "Upper Walkway",
+    caption: "Lorem Ipsum",
+    location: "Ubud, Bali",
     postUrl: "https://instagram.com/pertiwijungleswing",
-    gradient:
-      "linear-gradient(135deg, rgba(56,76,43,0.96), rgba(104,144,88,0.73), rgba(206,157,70,0.3))"
+    gradient: "linear-gradient(135deg, rgba(56,76,43,0.96), rgba(104,144,88,0.73))",
+    imageUrl: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=800"
   }
 ];
 

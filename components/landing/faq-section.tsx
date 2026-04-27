@@ -19,7 +19,7 @@ export function FaqSection() {
       <div className="container-shell grid gap-10 xl:grid-cols-[0.95fr_1.05fr] xl:items-start">
         <SectionReveal>
           <SectionHeading
-            eyebrow="FAQ"
+            eyebrow={t("faq.eyebrow" as any)}
             title={t("faq.title")}
             description={t("faq.subtitle")}
           />
@@ -27,10 +27,14 @@ export function FaqSection() {
 
         <SectionReveal delay={0.1}>
           <Accordion type="single" collapsible className="space-y-4">
-            {faqItems.map((item) => (
+            {faqItems.map((item, index) => (
               <AccordionItem key={item.id} value={item.id}>
-                <AccordionTrigger>{item.question}</AccordionTrigger>
-                <AccordionContent>{item.answer}</AccordionContent>
+                <AccordionTrigger>
+                  {t(`faq.q${index + 1}` as any)}
+                </AccordionTrigger>
+                <AccordionContent>
+                  {t(`faq.a${index + 1}` as any)}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

@@ -44,6 +44,7 @@ export type GalleryItem = {
   location: string;
   postUrl: string;
   gradient: string;
+  imageUrl?: string;
 };
 
 export type FaqItem = {

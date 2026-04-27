@@ -4,7 +4,7 @@ import { Footer } from "@/components/landing/footer";
 import { GallerySection } from "@/components/landing/gallery-section";
 import { Header } from "@/components/landing/header";
 import { HeroSection } from "@/components/landing/hero-section";
-import { PackagesSection } from "@/components/landing/packages-section";
+import { BookingSection } from "@/components/landing/booking-section";
 import { WhyUsSection } from "@/components/landing/why-us-section";
 import { WhatsAppWidget } from "@/components/landing/whatsapp-widget";
 
@@ -15,7 +15,7 @@ export default function HomePage() {
       <HeroSection />
       <AttractionsSection />
       <WhyUsSection />
-      <PackagesSection />
+      <BookingSection />
       <GallerySection />
       <FaqSection />
       <Footer />
