@@ -98,7 +98,7 @@ export function Footer() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Pertiwi Jungle Swing Location"
-            className="grayscale-[0.5] invert-[0.05] contrast-[1.1] brightness-[0.8]"
+            className="grayscale-[0] invert-[0] contrast-[1] brightness-[1.0]"
           ></iframe>
         </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
 
 
 
@@ -12,24 +13,39 @@ import { useLanguage } from "@/lib/i18n";
 
 const heroVideoSources = [
   {
-    src: "/static/videos/hero-video.mp4",
+    src: "/static/videos/hero-video-2.mp4",
     type: "video/mp4"
   }
 ].filter((source) => source.src);
 
 export function HeroSection() {
   const { t } = useLanguage();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleTimeUpdate = () => {
+    if (videoRef.current && videoRef.current.currentTime >= 53) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    }
+  };
 
   return (
     <section id="home" className="section-anchor relative min-h-screen pt-28">
       <div className="absolute inset-0">
         {heroVideoSources.length > 0 ? (
           <video
+            ref={videoRef}
             className="h-full w-full object-cover"
             autoPlay
             muted
-            loop
             playsInline
+            onTimeUpdate={handleTimeUpdate}
+            onEnded={() => {
+              if (videoRef.current) {
+                videoRef.current.currentTime = 0;
+                videoRef.current.play();
+              }
+            }}
             poster="/static/image/hero-poster.jpg"
           >
             {heroVideoSources.map((source) => (
