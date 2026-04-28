@@ -20,10 +20,10 @@ export function Footer() {
               </div>
               <div>
                 <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-emerald-400/90">Pertiwi Jungle Swing</p>
-                <h3 className="text-lg font-bold text-white mt-0.5">Discover the Thrill of Bali's Jungle Swing</h3>
+                <h3 className="text-lg font-bold text-white mt-0.5">Discover the Thrill of Bali&apos;s Jungle Swing</h3>
               </div>
             </div>
-            <p className="max-w-md leading-relaxed text-gray-400 text-sm">Experience the thrill of the jungle with breathtaking views and unforgettable adventures at Bali's premier jungle swing destination.</p>
+            <p className="max-w-md leading-relaxed text-gray-400 text-sm">Experience the thrill of the jungle with breathtaking views and unforgettable adventures at Bali&apos;s premier jungle swing destination.</p>
             <div className="pt-2">
               <Button asChild className="rounded-full bg-emerald-500 text-white hover:bg-emerald-600 border-none px-6">
                 <a href={`https://wa.me/${contactInfo.whatsapp}`} target="_blank" rel="noreferrer">

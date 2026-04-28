@@ -50,7 +50,7 @@ export function GallerySection() {
 
                 {/* Badge */}
                 <div className="absolute right-6 top-6 z-10 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
-                  <Badge variant="secondary" className="gap-2 bg-white/90 px-3 py-1.5 text-[10px] font-bold text-black backdrop-blur-md">
+                  <Badge variant="default" className="gap-2 bg-white/90 px-3 py-1.5 text-[10px] font-bold text-black backdrop-blur-md">
                     <Instagram className="size-3.5" /> INSTAGRAM
                   </Badge>
                 </div>
