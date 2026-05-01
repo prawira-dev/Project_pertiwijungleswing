@@ -1,6 +1,7 @@
 "use client";
 
 import { Instagram, MoveUpRight } from "lucide-react";
+import Image from "next/image";
 
 import { SectionHeading } from "@/components/landing/section-heading";
 import { SectionReveal } from "@/components/landing/section-reveal";
@@ -32,9 +33,10 @@ export function GallerySection() {
                 className="group relative block aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-muted shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
               >
                 {item.imageUrl ? (
-                  <img
+                  <Image
                     src={item.imageUrl}
                     alt={item.caption}
+                    fill
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 ) : (

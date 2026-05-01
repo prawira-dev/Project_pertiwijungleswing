@@ -34,7 +34,7 @@ export function TestimonialsSection() {
                   </div>
                   
                   <p className="text-muted-foreground italic leading-relaxed flex-grow">
-                    "{t(`testimonial.${item.id}.text` as any)}"
+                    &quot;{t(`testimonial.${item.id}.text` as any)}&quot;
                   </p>
 
                   <div className="flex items-center gap-4 pt-4 border-t border-border/50">

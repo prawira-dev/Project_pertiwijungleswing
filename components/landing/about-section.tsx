@@ -29,7 +29,7 @@ export function AboutSection() {
                   Visit Us in Ubud
                 </div>
                 <p className="text-white/90 text-sm font-medium leading-relaxed italic">
-                  "{t("about.quote")}"
+                  &quot;{t("about.quote")}&quot;
                 </p>
               </div>
             </div>

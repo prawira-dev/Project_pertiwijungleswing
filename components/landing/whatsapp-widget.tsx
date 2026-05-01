@@ -1,6 +1,7 @@
 "use client";
 
 import { MessageCircle, X, Phone } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/lib/i18n";
@@ -78,9 +79,11 @@ export function WhatsAppWidget() {
               isOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 rotate-90 scale-50"
             )}
           />
-          <img
+          <Image
             src="/static/images/whatsapp.svg"
             alt="WhatsApp"
+            width={32}
+            height={32}
             className={cn(
               "absolute size-8 object-contain transition-all duration-500 ease-out",
               isOpen ? "opacity-0 -rotate-90 scale-50" : "opacity-100 rotate-0 scale-100"
