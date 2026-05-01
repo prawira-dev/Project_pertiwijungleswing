@@ -1,8 +1,9 @@
 "use client";
 
-import { MoveUpRight, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
+import { Check, MoveUpRight, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef } from "react";
 
+import { SectionHeading } from "@/components/landing/section-heading";
 import { SectionReveal } from "@/components/landing/section-reveal";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -52,6 +53,15 @@ const AttractionCard = ({
             </span>
           </div>
 
+          {/* Badge top-left */}
+          {item.badge && (
+            <div className="absolute top-4 left-4 z-10">
+              <Badge variant="default" className="bg-primary text-white border-none px-3 py-1 text-[10px] font-bold uppercase tracking-wider">
+                {item.badge}
+              </Badge>
+            </div>
+          )}
+
           {/* Title - always visible at bottom */}
           <div className="absolute bottom-0 left-0 right-0 p-5 z-10 flex flex-col justify-end h-full">
             <h3 className="text-lg font-bold text-white transition-all duration-300">
@@ -98,12 +108,12 @@ const AttractionCard = ({
               <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
                 <div className="mb-4 inline-flex items-center gap-2 text-sm font-medium text-emerald-700">
                   <ShieldCheck className="size-4" />
-                  Safety & Session Notes
+                  Highlights
                 </div>
                 <ul className="space-y-3 text-sm leading-6 text-gray-600">
                   {item.safetyNotes.map((note) => (
                     <li key={note} className="flex gap-3">
-                      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-emerald-500" />
+                      <Check className="mt-1 size-3.5 shrink-0 text-emerald-500" />
                       <span>{note}</span>
                     </li>
                   ))}
@@ -145,16 +155,15 @@ export function AttractionsSection() {
         {/* Header row */}
         <SectionReveal>
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
-            <div className="space-y-4">
-              <Badge>{t("attraction.eyebrow")}</Badge>
-              <h2 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
-                {t("attraction.title")}
-              </h2>
-            </div>
+            <SectionHeading
+              eyebrow={t("attraction.eyebrow")}
+              title={t("attraction.title")}
+              description={t("attraction.subtitle")}
+            />
             <Button
               variant="outline"
               onClick={() => setShowAll((prev) => !prev)}
-              className="rounded-full bg-transparent border-border text-foreground hover:bg-foreground hover:text-background pb-0 pt-0 pr-1 pl-4 h-10 gap-2 font-medium shrink-0"
+              className="rounded-full bg-transparent border-border text-foreground hover:bg-foreground hover:text-background pb-0 pt-0 pr-1 pl-4 h-10 gap-2 font-medium shrink-0 mb-2"
             >
               {showAll ? t("attraction.showLess") : t("attraction.seeAll")}
               <span className="rounded-full bg-foreground text-background p-1.5 flex items-center justify-center">

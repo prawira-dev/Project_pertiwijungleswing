@@ -19,23 +19,27 @@ export type Attraction = {
   reservationLabel: string;
   gallery: AttractionGalleryImage[];
   gradient: string;
+  badge?: string;
 };
 
 export type ValuePoint = {
   id: string;
   title: string;
   description: string;
-  icon: "shield" | "camera" | "mountain" | "sparkles" | "cup" | "lock";
+  icon: "shield" | "camera" | "mountain" | "sparkles" | "cup" | "lock" | "trees" | "utensils";
 };
 
 export type PackageOption = {
   id: string;
   name: string;
+  subtitle: string;
+  description: string;
   audience: string;
   price: string;
   duration: string;
   features: string[];
   badge?: string;
+  image?: string;
 };
 
 export type GalleryItem = {

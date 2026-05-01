@@ -4,19 +4,19 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 
-const inter = Inter({ 
-  subsets: ["latin"], 
-  variable: "--font-sans" 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans"
 });
 
-const outfit = Outfit({ 
-  subsets: ["latin"], 
-  variable: "--font-heading" 
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-heading"
 });
 
 export const metadata: Metadata = {
   title: "Pertiwi Jungle Swing",
-  description: "Discover the Thrill of Bali’s Jungle Swing Experience"
+  description: "A More Beautiful Swing Experience in Bali"
 };
 
 export default function RootLayout({

@@ -62,7 +62,7 @@ export function Header() {
             </button>
             <Button asChild className="rounded-full bg-transparent border border-white text-white hover:bg-white hover:text-primary">
               <a
-                href={`https://wa.me/${contactInfo.whatsapp}`}
+                href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent(t("whatsapp.message"))}`}
                 target="_blank"
                 rel="noreferrer"
               >
