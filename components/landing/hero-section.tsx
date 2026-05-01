@@ -65,29 +65,39 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-hero-overlay" />
       </div>
 
-      <div className="container-shell relative z-10 flex min-h-[calc(100vh-7rem)] flex-col pt-24 pb-14">
-        <div className="relative z-20 flex w-full flex-col justify-end mt-auto text-left gap-4 sm:gap-6 pt-[10vh] sm:pt-[20vh]">
+      <div className="container-shell relative z-10 flex min-h-[calc(100vh-7rem)] flex-col justify-end pb-10 sm:pb-14">
+        <div className="relative z-20 flex w-full flex-col text-left gap-4 sm:gap-6 max-w-4xl">
           <SectionReveal delay={0.1}>
-            <Button size="lg" className="rounded-full w-fit px-8 h-12 sm:h-14 text-base sm:text-lg" asChild>
-              <a
-                href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent(t("whatsapp.message"))}`}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center"
-              >
-                {t("hero.cta")} <MoveUpRight className="ml-2 size-5 rounded-full bg-white text-primary p-1" />
-              </a>
-            </Button>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white tracking-tight leading-tight font-heading">
+              {t("hero.title")}
+            </h1>
           </SectionReveal>
 
-          <SectionReveal delay={0.2} className="flex flex-col sm:flex-row items-end justify-between w-full border-t border-white/20 pt-8 mt-12 sm:mt-16 text-white gap-8">
-            <div className="text-left shrink-0">
-              <p className="font-bold text-lg sm:text-xl whitespace-pre-line">{t("hero.title")}</p>
-            </div>
-
-            <div className="text-left sm:text-right text-sm sm:text-base max-w-2xl text-white/80 leading-relaxed">
+          <SectionReveal delay={0.2}>
+            <p className="text-sm sm:text-base text-white/90 leading-relaxed max-w-2xl">
               {t("hero.subtitle")}
-            </div>
+            </p>
+          </SectionReveal>
+
+          <SectionReveal delay={0.3} className="flex flex-col items-start gap-4">
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-full px-8 h-12 text-sm font-bold bg-transparent text-white border-white hover:bg-white hover:text-primary transition-all duration-300"
+              asChild
+            >
+              <a
+                href={`https://pertiwiadventure.com/bookings/`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t("hero.cta")}
+              </a>
+            </Button>
+
+            <p className="text-[10px] sm:text-xs text-white/80 italic font-normal max-w-xl">
+              {t("hero.disclaimer")}
+            </p>
           </SectionReveal>
         </div>
       </div>

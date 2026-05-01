@@ -8,47 +8,43 @@ import { useLanguage } from "@/lib/i18n";
 export function CTASection() {
   const { t } = useLanguage();
 
-  const handleScrollToBooking = () => {
-    const bookingSection = document.getElementById("booking-embed");
-    if (bookingSection) {
-      bookingSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
-    <section className="py-24 relative overflow-hidden bg-primary text-primary-foreground">
+    <section className="py-14 relative overflow-hidden">
       <div className="container-shell relative z-10">
-        <div className="max-w-3xl mx-auto text-center space-y-10">
+        <div className="max-w-3xl mx-auto text-center space-y-6">
           <SectionReveal>
             <div className="space-y-4">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
                 {t("cta.title")}
               </h2>
-              <p className="text-lg text-primary-foreground/80 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-lg text-black leading-relaxed max-w-2xl mx-auto">
                 {t("cta.subtitle")}
               </p>
+              <div className="pt-2">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-orange-500/10 text-orange-600 font-bold text-sm tracking-wide">
+                  {t("inclusion.price.ticket")} {t("inclusion.price.promo")}
+                </span>
+              </div>
             </div>
           </SectionReveal>
 
           <SectionReveal delay={0.1}>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="secondary"
-              onClick={handleScrollToBooking}
-              className="rounded-full px-10 h-14 text-base font-bold shadow-xl hover:shadow-2xl transition-all duration-300 gap-3 group"
+              asChild
+              className="rounded-full px-10 h-14 bg-orange-500 hover:bg-orange-600 text-white text-lg shadow-2xl shadow-orange-500/20 transition-transform duration-300 group"
             >
-              {t("cta.button")}
-              <MoveRight className="size-5 transition-transform duration-300 group-hover:translate-x-2" />
+              <a href="https://pertiwiadventure.com/bookings/" target="_blank" rel="noreferrer">
+                <span className="relative inline-block transition-transform group-hover:-translate-y-0.5">
+                  {t("cta.button")}
+                </span>
+                <MoveRight className="size-5 transition-transform group-hover:translate-x-2" />
+              </a>
             </Button>
           </SectionReveal>
         </div>
-      </div>
-
-      {/* Decorative patterns */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute -top-24 -left-24 size-96 rounded-full border-2 border-white/20" />
-        <div className="absolute -bottom-24 -right-24 size-96 rounded-full border-2 border-white/20" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[800px] rounded-full border border-white/10" />
       </div>
     </section>
   );

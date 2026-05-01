@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Manrope, Cormorant_Garamond } from "next/font/google";
 
 import "./globals.css";
 import { Providers } from "@/components/providers";
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-sans"
 });
 
-const outfit = Outfit({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-heading"
 });
 
@@ -25,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${outfit.variable} font-sans`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${manrope.variable} ${cormorant.variable} font-sans`} suppressHydrationWarning>
         <Providers>{children}</Providers>
       </body>
     </html>

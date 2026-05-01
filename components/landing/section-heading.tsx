@@ -3,36 +3,42 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 type SectionHeadingProps = {
-  eyebrow: ReactNode;
   title: ReactNode;
   description: ReactNode;
   align?: "left" | "center";
+  inverted?: boolean;
+  size?: "default" | "lg";
 };
 
 export function SectionHeading({
-  eyebrow,
   title,
   description,
-  align = "left"
+  align = "left",
+  inverted = false,
+  size = "default"
 }: SectionHeadingProps) {
   const centered = align === "center";
 
   return (
-    <div className={cn("space-y-5", centered && "mx-auto max-w-3xl text-center")}>
-      {typeof eyebrow === "string" ? (
-        <Badge className={centered ? "mx-auto" : undefined}>{eyebrow}</Badge>
-      ) : (
-        <div className={centered ? "mx-auto" : undefined}>{eyebrow}</div>
-      )}
-      
-      <div className="space-y-3">
-        <h2 className="text-balance text-3xl font-semibold uppercase leading-tight text-foreground sm:text-4xl lg:text-5xl">
+    <div className={cn("space-y-5", centered && "mx-auto max-w-4xl text-center")}>
+      <div className="space-y-4">
+        <h2 className={cn(
+          "text-balance font-bold leading-[1.1] font-heading",
+          size === "lg" 
+            ? "text-4xl sm:text-5xl lg:text-7xl" 
+            : "text-3xl sm:text-4xl lg:text-5xl",
+          inverted ? "text-white" : "text-foreground"
+        )}>
           {title}
         </h2>
         {description && (
           <p
             className={cn(
-              "max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg",
+              "leading-relaxed",
+              size === "lg"
+                ? "text-lg sm:text-xl lg:text-2xl max-w-3xl"
+                : "text-base sm:text-lg max-w-2xl",
+              inverted ? "text-white/80" : "text-muted-foreground",
               centered && "mx-auto"
             )}
           >

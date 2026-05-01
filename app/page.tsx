@@ -9,7 +9,7 @@ import { InclusionSection } from "@/components/landing/inclusion-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { AboutSection } from "@/components/landing/about-section";
 import { CTASection } from "@/components/landing/cta-section";
-import { BookingSection } from "@/components/landing/booking-section";
+import { AdventureSection } from "@/components/landing/adventure-section";
 import { WhatsAppWidget } from "@/components/landing/whatsapp-widget";
 
 export default function HomePage() {
@@ -20,7 +20,7 @@ export default function HomePage() {
       <WhyUsSection />
       <AttractionsSection />
       <FeaturedExperiencesSection />
-      <BookingSection />
+      <AdventureSection />
       <InclusionSection />
       <TestimonialsSection />
       <AboutSection />

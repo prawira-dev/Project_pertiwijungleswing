@@ -1,110 +1,155 @@
 "use client";
 
-import { Instagram, Mail, MapPin, MoveUpRight, Phone } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import { contactInfo, navItems } from "@/lib/data/landing";
+import { Mail, Phone, Clock, MapPin, Facebook, Instagram, ExternalLink, MoveRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
+
+// Custom SVG Icons for TikTok and TripAdvisor
+const TikTokIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.06-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-1.13-.31-2.34-.25-3.41.33-.71.38-1.27 1.03-1.6 1.81-.45.96-.52 2.05-.29 3.07.21 1.18.91 2.23 1.88 2.97.96.73 2.15 1.06 3.35 1.03 1.07-.03 2.1-.44 2.91-1.14.9-.74 1.43-1.84 1.54-3 .11-1.56.04-3.12.04-4.68V0.02z" />
+  </svg>
+);
+
+const TripAdvisorIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3.333 18c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2zm6.666 0c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2zm1.667-6h-10v-2h10v2zm0-4h-10v-2h10v2z" />
+  </svg>
+);
+
+const socialGroups = [
+  {
+    title: "Pertiwi Jungle Swing",
+    links: [
+      { id: "fb-pjs", icon: Facebook, href: "https://facebook.com/pertiwijungleswing" },
+      { id: "ig-pjs", icon: Instagram, href: "https://instagram.com/pertiwijungleswing" },
+    ]
+  },
+  {
+    title: "Pertiwi Adventure",
+    links: [
+      { id: "fb-pa", icon: Facebook, href: "https://facebook.com/pertiwiadventure" },
+      { id: "ig-pa", icon: Instagram, href: "https://instagram.com/pertiwiadventure" },
+      { id: "tt-pa", icon: TikTokIcon, href: "https://www.tiktok.com/@pertiwiadventure" },
+      { id: "ta-pa", icon: TripAdvisorIcon, href: "https://www.tripadvisor.com/Attraction_Review-g6940266-d6894416-Reviews-Pertiwi_Quad_Adventure-Abiansemal_Bali.html" },
+    ]
+  }
+];
 
 export function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-[#091712] border-t border-white/10 pt-16 pb-12">
+    <footer className="bg-primary border-t border-white/10 pt-20 pb-10 text-white/70">
       <div className="container-shell">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.7fr_0.85fr]">
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="flex size-12 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
-                <span className="text-xl font-black">P</span>
-              </div>
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-emerald-400/90">Pertiwi Jungle Swing</p>
-                <h3 className="text-lg font-bold text-white mt-0.5">Discover the Thrill of Bali&apos;s Jungle Swing</h3>
-              </div>
+        <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr_1fr]">
+          {/* Column 1: Info & Socials */}
+          <div className="space-y-4">
+            <div className="space-y-4">
+              <h3 className="text-2xl font-normal text-white font-heading tracking-tight">
+                Pertiwi Jungle Swing
+              </h3>
+              <p className="text-sm leading-relaxed max-w-md">
+                {t("footer.description")}
+              </p>
             </div>
-            <p className="max-w-md leading-relaxed text-gray-400 text-sm">Experience the thrill of the jungle with breathtaking views and unforgettable adventures at Bali&apos;s premier jungle swing destination.</p>
-            <div className="pt-2">
-              <Button asChild className="rounded-full bg-emerald-500 text-white hover:bg-emerald-600 border-none px-6">
-                <a href={`https://wa.me/${contactInfo.whatsapp}`} target="_blank" rel="noreferrer">
-                  {t("nav.book")} <MoveUpRight className="ml-2 size-4" />
-                </a>
-              </Button>
-            </div>
-          </div>
 
-          <div className="space-y-6">
-            <h4 className="text-sm font-bold uppercase tracking-widest text-white">Quick Links</h4>
-            <nav className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm text-gray-400 transition hover:text-emerald-400"
-                >
-                  {t(`nav.${item.label.toLowerCase()}` as any) || item.label}
-                </a>
+            <div className="space-y-2">
+              {socialGroups.map((group) => (
+                <div key={group.title} className="space-y-3">
+                  <p className="text-xs font-bold uppercase tracking-widest text-white/40">{group.title}</p>
+                  <div className="flex gap-3">
+                    {group.links.map((social) => (
+                      <a
+                        key={social.id}
+                        href={social.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="size-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300"
+                      >
+                        <social.icon className="size-5" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
               ))}
-            </nav>
-          </div>
+            </div>
 
-          <div className="space-y-6">
-            <h4 className="text-sm font-bold uppercase tracking-widest text-white">Contact Info</h4>
-            <div className="flex flex-col gap-4">
-              <a
-                href={contactInfo.mapsUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-start gap-3 text-sm leading-6 text-gray-400 transition hover:text-white"
-              >
-                <MapPin className="mt-1 size-4 shrink-0 text-emerald-400" />
-                <span>Pertiwi Jungle Swing Location</span>
-              </a>
-              <a
-                href={`tel:${contactInfo.phone}`}
-                className="flex items-center gap-3 text-sm text-gray-400 transition hover:text-white"
-              >
-                <Phone className="size-4 shrink-0 text-emerald-400" />
-                <span>{contactInfo.phone}</span>
-              </a>
-              <a
-                href={`mailto:${contactInfo.email}`}
-                className="flex items-center gap-3 text-sm text-gray-400 transition hover:text-white"
-              >
-                <Mail className="size-4 shrink-0 text-emerald-400" />
-                <span>{contactInfo.email}</span>
-              </a>
-              <a
-                href={contactInfo.instagramUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-3 text-sm text-gray-400 transition hover:text-white"
-              >
-                <Instagram className="size-4 shrink-0 text-emerald-400" />
-                <span>@pertiwijungleswing</span>
-              </a>
+            <div className="space-y-4 text-sm pt-4 border-t border-white/5">
+              <div className="flex gap-3">
+                <MapPin className="size-5 text-orange-500 shrink-0" />
+                <p>Pertiwi Adventure: {t("footer.address")}</p>
+              </div>
+              <div className="flex gap-3">
+                <Mail className="size-5 text-orange-500 shrink-0" />
+                <a href="mailto:pertiwiadventure@gmail.com" className="hover:text-white transition-colors">
+                  pertiwiadventure@gmail.com
+                </a>
+              </div>
+              <div className="flex gap-3">
+                <Phone className="size-5 text-orange-500 shrink-0" />
+                <div className="space-y-1">
+                  <p>Admin One: +62 813 3859 7825</p>
+                  <p>Admin Two: +62 813 3979 9975</p>
+                </div>
+              </div>
+              <div className="flex gap-3 italic text-white/50">
+                <Clock className="size-5 text-orange-500 shrink-0" />
+                <p>{t("footer.opening")}</p>
+              </div>
             </div>
           </div>
+
+          {/* Column 2: Highlights */}
+          <div className="space-y-8">
+            <h3 className="text-xl font-normal text-white font-heading tracking-tight">
+              {t("footer.highlights.title")}
+            </h3>
+            <ul className="space-y-4 text-sm">
+              {[
+                "Scenic Jungle Views",
+                "Beautiful Photo Spots",
+                "Featured Experiences",
+                "Authentic Nature",
+                "Beautiful Natural Surroundings"
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2 group cursor-default">
+                  <span className="size-1.5 rounded-full bg-orange-500/50 group-hover:bg-orange-500 transition-colors" />
+                  <span className="group-hover:text-white transition-colors">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Products */}
+          <div className="space-y-8">
+            <h3 className="text-xl font-normal text-white font-heading tracking-tight">
+              {t("footer.products.title")}
+            </h3>
+            <ul className="grid grid-cols-1 gap-4 text-sm">
+              {[
+                "ATV Quad Bike",
+                "UTV Jungle Buggy",
+                "White Water Rafting",
+                "Paintball Game",
+                "Pertiwi Jungle Swing",
+                "Majestic VW Tours",
+                "Team Building"
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2 group cursor-pointer hover:text-white transition-colors">
+                  <MoveRight className="size-4 text-orange-500 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        {/* Map Section */}
-        <div className="mt-16 overflow-hidden rounded-2xl border border-white/5 shadow-2xl">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.299912554737!2d115.24030060000001!3d-8.470189199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd223000dc6682f%3A0x881ff8a2570ef274!2sPertiwi%20Jungle%20Swing!5e0!3m2!1sen!2sid!4v1777277786696!5m2!1sen!2sid"
-            width="100%"
-            height="300"
-            style={{ border: 0 }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Pertiwi Jungle Swing Location"
-            className="grayscale-[0] invert-[0] contrast-[1] brightness-[1.0]"
-          ></iframe>
-        </div>
-
-        <div className="mt-12 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-white/5 pt-8 text-xs font-medium text-gray-500 uppercase tracking-widest">
-          <p>Copyright © 2026 Pertiwi Jungle Swing.</p>
-          <p>Designed by Aditya</p>
+        <div className="mt-8 pt-2 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-widest uppercase">
+          <p>© {new Date().getFullYear()} PERTIWI JUNGLE SWING. {t("footer.rights")}</p>
+          <div className="flex gap-8">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>

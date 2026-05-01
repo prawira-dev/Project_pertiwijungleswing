@@ -27,14 +27,38 @@ export function InclusionSection() {
       <div className="container-shell">
         <SectionReveal>
           <SectionHeading
-            eyebrow={t("inclusion.eyebrow")}
             title={t("inclusion.title")}
             description={t("inclusion.subtitle")}
             align="center"
           />
         </SectionReveal>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <SectionReveal delay={0.2}>
+          <div className="mt-10 mb-6 flex flex-col items-center justify-center">
+            <div className="relative p-8 md:p-10 rounded-[2.5rem] bg-foreground text-white shadow-2xl overflow-hidden group max-w-lg w-full text-center">
+              {/* Background patterns */}
+              <div className="absolute top-0 right-0 size-32 bg-primary/10 rounded-full -mr-16 -mt-16 blur-2xl" />
+              
+              <div className="relative space-y-4">
+                <h3 className="text-xl font-medium opacity-80 font-heading">{t("inclusion.price.ticket")}</h3>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-lg line-through opacity-50 decoration-orange-500 decoration-2">{t("inclusion.price.original")}</span>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-5xl md:text-6xl font-bold text-white tracking-tighter font-heading">
+                      {t("inclusion.price.promo")}
+                    </span>
+                    <span className="text-sm font-medium opacity-60">/ pax</span>
+                  </div>
+                </div>
+                <p className="text-[12px] md:text-sm font-medium text-orange-400 italic">
+                  {t("inclusion.price.note")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </SectionReveal>
+
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {inclusionPoints.map((item, index) => {
             const Icon = iconMap[item.icon] || Sparkles;
 
@@ -76,9 +100,6 @@ export function InclusionSection() {
             
             <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-12 max-w-4xl mx-auto">
               <div className="flex-1 space-y-4 text-center md:text-left">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold tracking-wide uppercase">
-                  {t("inclusion.addon.title")}
-                </div>
                 <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
                   {t("inclusion.addon.heading")}
                 </h3>

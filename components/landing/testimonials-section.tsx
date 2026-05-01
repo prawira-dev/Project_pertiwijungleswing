@@ -15,7 +15,6 @@ export function TestimonialsSection() {
       <div className="container-shell space-y-12">
         <SectionReveal>
           <SectionHeading
-            eyebrow={t("testimonials.eyebrow")}
             title={t("testimonials.title")}
             description={t("testimonials.subtitle")}
             align="center"
@@ -32,7 +31,6 @@ export function TestimonialsSection() {
                       <Star key={i} className={`size-4 ${i < item.rating ? "fill-yellow-400 text-yellow-400" : "text-muted"}`} />
                     ))}
                   </div>
-                  
                   <p className="text-muted-foreground italic leading-relaxed flex-grow">
                     &quot;{t(`testimonial.${item.id}.text` as any)}&quot;
                   </p>
@@ -42,8 +40,8 @@ export function TestimonialsSection() {
                       <User className="size-6" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-sm leading-tight">{item.name}</h4>
-                      <p className="text-xs text-muted-foreground">{item.country}</p>
+                      <h4 className="font-bold text-lg leading-tight">{item.name}</h4>
+                      <p className="text-sm text-muted-foreground">{item.country}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -52,7 +50,7 @@ export function TestimonialsSection() {
           ))}
         </div>
       </div>
-      
+
       {/* Background Decorations */}
       <div className="absolute top-1/2 -left-20 size-96 bg-primary/5 rounded-full blur-3xl opacity-50 -z-10" />
       <div className="absolute top-1/4 -right-20 size-96 bg-primary/5 rounded-full blur-3xl opacity-50 -z-10" />

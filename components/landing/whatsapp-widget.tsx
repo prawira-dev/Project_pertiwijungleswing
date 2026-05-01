@@ -80,7 +80,7 @@ export function WhatsAppWidget() {
             )}
           />
           <Image
-            src="/static/images/whatsapp.svg"
+            src="/static/images/svg/whatsapp.svg"
             alt="WhatsApp"
             width={32}
             height={32}
