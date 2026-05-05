@@ -20,12 +20,12 @@ export default function HomePage() {
       <WhyUsSection />
       <AttractionsSection />
       <FeaturedExperiencesSection />
-      <AdventureSection />
       <InclusionSection />
       <TestimonialsSection />
       <AboutSection />
       <FaqSection />
       <CTASection />
+      <AdventureSection />
       <Footer />
       <WhatsAppWidget />
     </main>

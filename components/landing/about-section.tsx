@@ -13,7 +13,7 @@ export function AboutSection() {
   return (
     <section id="about" className="section-space relative bg-primary">
       <div className="container-shell">
-        <div className="grid gap-12 lg:grid-cols-2 items-center">
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
           <SectionReveal>
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <Image
@@ -43,7 +43,7 @@ export function AboutSection() {
 
             <SectionReveal delay={0.1}>
               <div className="space-y-6">
-                <p className="text-white/70 leading-relaxed text-lg">
+                <p className="text-white/70 leading-relaxed text-sm lg:text-base">
                   {t("about.story")}
                 </p>
 

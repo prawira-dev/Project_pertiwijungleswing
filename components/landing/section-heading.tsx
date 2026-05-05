@@ -36,8 +36,8 @@ export function SectionHeading({
             className={cn(
               "leading-relaxed",
               size === "lg"
-                ? "text-lg sm:text-xl lg:text-2xl max-w-3xl"
-                : "text-base sm:text-lg max-w-2xl",
+                ? "text-base lg:text-xl max-w-3xl"
+                : "text-sm lg:text-base max-w-2xl",
               inverted ? "text-white/80" : "text-muted-foreground",
               centered && "mx-auto"
             )}

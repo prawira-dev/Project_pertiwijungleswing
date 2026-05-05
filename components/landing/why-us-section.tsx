@@ -20,15 +20,15 @@ export function WhyUsSection() {
   return (
     <section id="whyus" className="section-space relative overflow-hidden">
       <div className="container-shell">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
             <SectionReveal>
               <div className="space-y-1">
-                <h2 className="text-[20px] md:text-[30px] lg:text-[40px] font-normal tracking-[-3px] text-[#2c3591] font-heading">
+                <h2 className="text-xl lg:text-3xl font-bold text-[#2c3591] font-heading">
                   {t("whyus.title")}
                 </h2>
-                <p className="text-[11px] md:text-[13px] lg:text-[15px] font-normal text-black leading-relaxed max-w-xl">
+                <p className="text-sm lg:text-base font-normal text-black leading-relaxed max-w-xl">
                   {t("whyus.subtitle")}
                 </p>
               </div>
@@ -55,7 +55,7 @@ export function WhyUsSection() {
                       <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-[#2c3591]">
                         {t(`whyus.point.${item.id}.title` as any) || item.title}
                       </h3>
-                      <p className="text-[12px] md:text-[13px] lg:text-[15px] font-normal text-black leading-relaxed max-w-xl">
+                      <p className="text-sm lg:text-base font-normal text-black leading-tight max-w-xl">
                         {t(`whyus.point.${item.id}.description` as any) || item.description}
                       </p>
                     </div>

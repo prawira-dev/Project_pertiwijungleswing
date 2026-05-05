@@ -74,7 +74,7 @@ export function HeroSection() {
           </SectionReveal>
 
           <SectionReveal delay={0.2}>
-            <p className="text-sm sm:text-base text-white/90 leading-relaxed max-w-2xl">
+            <p className="text-sm lg:text-base text-white/90 leading-relaxed max-w-2xl">
               {t("hero.subtitle")}
             </p>
           </SectionReveal>

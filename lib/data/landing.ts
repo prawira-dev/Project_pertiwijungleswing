@@ -11,11 +11,11 @@ export const navItems: NavItem[] = [
   { label: "WhyUs", href: "#whyus" },
   { label: "Attractions", href: "#attractions" },
   { label: "Experiences", href: "#experiences" },
-  { label: "Adventures", href: "#adventure" },
   { label: "Inclusions", href: "#inclusions" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "About", href: "#about" },
-  { label: "FAQ", href: "#faq" }
+  { label: "FAQ", href: "#faq" },
+  { label: "Adventures", href: "#adventure" },
 ];
 
 export const attractionItems: Attraction[] = [
@@ -418,6 +418,12 @@ export const inclusionPoints: ValuePoint[] = [
     title: "Insurance Coverage",
     description: "Basic activity protection is included with every booking.",
     icon: "shield"
+  },
+  {
+    id: "dress-rental",
+    title: "Dress Rental (Add-on)",
+    description: "Available for beautiful and more elegant photo moments.",
+    icon: "camera"
   }
 ];
 

@@ -92,13 +92,13 @@ const AttractionCard = ({
                 <DialogTitle className="text-3xl font-bold text-gray-900 tracking-tight font-heading">
                   {lang === "id" && item.title_id ? item.title_id : item.title}
                 </DialogTitle>
-                <DialogDescription className="text-lg text-primary/70 mt-2 font-medium">
+                <DialogDescription className="text-sm lg:text-base text-primary/70 mt-2 font-medium">
                   {lang === "id" && item.subtitle_id ? item.subtitle_id : item.subtitle}
                 </DialogDescription>
               </DialogHeader>
 
               <div className="mt-6 space-y-6">
-                <p className="leading-7 text-gray-600">
+                <p className="leading-relaxed text-sm lg:text-base text-gray-600">
                   {lang === "id" && item.description_id ? item.description_id : item.description}
                 </p>
 
@@ -142,14 +142,23 @@ export function AttractionsSection() {
   const scroll = (dir: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
-    const amount = el.clientWidth * 0.6;
-    el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+    const amount = el.clientWidth * 0.8;
+    const isAtEndRight = el.scrollLeft >= el.scrollWidth - el.clientWidth - 20;
+    const isAtEndLeft = el.scrollLeft <= 20;
+
+    if (dir === "right" && isAtEndRight) {
+      el.scrollTo({ left: 0, behavior: "smooth" });
+    } else if (dir === "left" && isAtEndLeft) {
+      el.scrollTo({ left: el.scrollWidth, behavior: "smooth" });
+    } else {
+      el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+    }
     setTimeout(checkScroll, 400);
   };
 
   return (
     <section id="attractions" className="section-space relative bg-background">
-      <div className="container-shell space-y-10">
+      <div className="container-shell space-y-6">
         {/* Header row */}
         <SectionReveal>
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
@@ -179,8 +188,8 @@ export function AttractionsSection() {
               const isTopThree = index < 3;
               const isLast = index === attractionItems.length - 1;
               return (
-                <div 
-                  key={item.id} 
+                <div
+                  key={item.id}
                   className={cn(
                     "col-span-12 sm:col-span-6 lg:col-span-4", // Mobile: 1 per row, Tablet: 2 per row
                     !isTopThree && "lg:col-span-3", // Desktop rest: 4 per row
@@ -210,16 +219,14 @@ export function AttractionsSection() {
               <div className="flex items-center justify-center gap-3 pt-2">
                 <button
                   onClick={() => scroll("left")}
-                  disabled={!canScrollLeft}
-                  className="flex size-10 items-center justify-center rounded-full border border-border text-muted-foreground transition hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed"
+                  className="flex size-10 items-center justify-center rounded-full border border-border text-muted-foreground transition hover:bg-muted"
                   aria-label="Previous attractions"
                 >
                   <ChevronLeft className="size-5" />
                 </button>
                 <button
                   onClick={() => scroll("right")}
-                  disabled={!canScrollRight}
-                  className="flex size-10 items-center justify-center rounded-full border border-border text-muted-foreground transition hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed"
+                  className="flex size-10 items-center justify-center rounded-full border border-border text-muted-foreground transition hover:bg-muted"
                   aria-label="Next attractions"
                 >
                   <ChevronRight className="size-5" />

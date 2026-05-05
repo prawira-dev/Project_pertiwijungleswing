@@ -35,7 +35,7 @@ export function AdventureSection() {
                   </span>
                 </h2>
 
-                <p className="text-lg md:text-xl text-black/70 leading-relaxed max-w-2xl mx-auto">
+                <p className="text-sm lg:text-base text-black/70 leading-relaxed max-w-2xl mx-auto">
                   {t("adventure.subtitle")}
                 </p>
               </div>
@@ -49,7 +49,7 @@ export function AdventureSection() {
                       <div className="size-10 rounded-xl bg-black/10 flex items-center justify-center transition-all duration-300 group-hover:bg-orange-500 group-hover:scale-110">
                         <Icon className="size-5 text-black" />
                       </div>
-                      <span className="text-lg text-black font-medium group-hover:text-orange-500 transition-colors">
+                      <span className="text-sm lg:text-base text-black font-medium group-hover:text-orange-500 transition-colors">
                         {t(`adventure.item.${activity.id}` as any)}
                       </span>
                     </div>

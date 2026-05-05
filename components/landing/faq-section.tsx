@@ -19,7 +19,7 @@ export function FaqSection() {
 
   return (
     <section id="faq" className="section-anchor section-space relative">
-      <div className="container-shell grid gap-10 xl:grid-cols-[0.95fr_1.05fr] xl:items-start">
+      <div className="container-shell grid gap-6 xl:grid-cols-[0.95fr_1.05fr] xl:items-start">
         <SectionReveal>
           <div className="space-y-2">
             <SectionHeading
@@ -52,10 +52,10 @@ export function FaqSection() {
           >
             {faqItems.map((item, index) => (
               <AccordionItem key={item.id} value={item.id}>
-                <AccordionTrigger className="font-sans text-lg text-left">
+                <AccordionTrigger className="font-sans text-sm lg:text-base text-left">
                   {t(`faq.q${index + 1}` as any)}
                 </AccordionTrigger>
-                <AccordionContent className="font-sans text-base">
+                <AccordionContent className="font-sans text-sm lg:text-base">
                   {t(`faq.a${index + 1}` as any)}
                 </AccordionContent>
               </AccordionItem>

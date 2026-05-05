@@ -16,6 +16,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+
 import { GallerySlider } from "./gallery-slider";
 
 export function FeaturedExperiencesSection() {
@@ -32,7 +33,7 @@ export function FeaturedExperiencesSection() {
           />
         </SectionReveal>
 
-        <div className={`grid gap-8 ${packageOptions.length === 1 ? 'max-w-lg mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
+        <div className="flex flex-col gap-12 max-w-7xl mx-auto">
           {packageOptions.map((pkg, index) => {
             const name = lang === "id" && pkg.name_id ? pkg.name_id : pkg.name;
             const subtitle = lang === "id" && pkg.subtitle_id ? pkg.subtitle_id : pkg.subtitle;
@@ -44,130 +45,99 @@ export function FeaturedExperiencesSection() {
 
             return (
               <SectionReveal key={pkg.id} delay={index * 0.1}>
-                <Dialog>
-                  <div className="relative group flex flex-col h-full bg-background border border-border rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-primary/20">
-                    <DialogTrigger asChild>
-                      <div className="relative aspect-[16/10] overflow-hidden cursor-pointer">
-                        <Image
-                          src={pkg.image || "/static/images/placeholder.jpg"}
-                          alt={name}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent transition-opacity group-hover:opacity-60" />
-                        {badge && (
-                          <div className="absolute top-5 right-5 z-10">
-                            <Badge className="bg-primary text-white border-none px-4 py-1.5 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-lg">
-                              {badge}
-                            </Badge>
-                          </div>
+                <div className="overflow-hidden rounded-[2rem] bg-[#2f4d3d] p-4 sm:p-5 lg:p-6 shadow-2xl">
+                  <Dialog>
+                    <div className="flex flex-col lg:flex-row gap-4 sm:gap-5 lg:gap-6 h-auto lg:h-[450px]">
+                      
+                      {/* Left Panel - Fixed Info Image */}
+                      <div className="relative w-full lg:w-[45%] h-[350px] sm:h-[450px] lg:h-full rounded-2xl overflow-hidden group">
+                        {pkg.image && (
+                          <Image
+                            src={pkg.image}
+                            alt={name}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
                         )}
-                      </div>
-                    </DialogTrigger>
-
-                    <div className="px-6 pt-5 pb-4 space-y-3 flex flex-col h-full">
-                      <div className="space-y-2">
-                        <h3 className="text-2xl font-bold tracking-tight font-heading">{name}</h3>
-                        <div className="flex items-center gap-8 text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                          <span className="flex items-start gap-2 whitespace-pre-line"><Users className="size-5 mt-0.5" /> {audience}</span>
-                          <span className="flex items-center gap-2"><Clock className="size-5" /> {duration}</span>
+                        {/* Dark gradient for text readability */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-0" />
+                        
+                        <div className="absolute inset-0 p-8 sm:p-10 flex flex-col justify-center items-start z-10">
+                          <h3 className="text-3xl sm:text-4xl font-black text-white tracking-tight font-heading uppercase mb-3 drop-shadow-md">
+                            {name}
+                          </h3>
+                          <p className="text-white/90 text-sm sm:text-base leading-relaxed mb-6 max-w-xs font-medium drop-shadow-sm">
+                            {subtitle}
+                          </p>
+                          <DialogTrigger asChild>
+                            <Button variant="outline" className="rounded-full border-white/80 text-white hover:bg-white hover:text-black bg-transparent px-8 h-10 font-bold transition-all duration-300 backdrop-blur-sm">
+                              {lang === "id" ? "Pelajari Lebih Lanjut" : "Learn More"}
+                            </Button>
+                          </DialogTrigger>
                         </div>
                       </div>
 
-                      <div className="space-y-1">
-                        <div className="text-3xl font-bold text-primary">
-                          {pkg.price}
-                        </div>
-                        <p className="text-base text-muted-foreground leading-relaxed line-clamp-2">
-                          {subtitle}
-                        </p>
-                      </div>
-
-                      <div className="space-y-1 flex-grow">
-                        <ul className="space-y-2">
-                          {features.slice(0, 4).map((feature, i) => (
-                            <li key={i} className="flex gap-3 text-base leading-relaxed text-muted-foreground">
-                              <Check className="size-4 shrink-0 text-emerald-500 mt-1" />
-                              <span className="line-clamp-1">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <DialogTrigger asChild>
-                        <Button className="w-full rounded-full h-12 font-bold transition-all duration-300">
-                          {lang === "id" ? "Lihat Detail" : "View Details"}
-                        </Button>
-                      </DialogTrigger>
-                    </div>
-                  </div>
-
-                  <DialogContent className="h-[90vh] w-[95vw] max-w-5xl overflow-hidden p-0 border-none bg-background/95 backdrop-blur-xl">
-                    <div className="grid h-full gap-0 lg:grid-cols-2">
-                      {/* Gallery Panel */}
-                      <div className="relative h-[300px] sm:h-[400px] lg:h-full overflow-hidden bg-muted">
+                      {/* Right Panel - Slider */}
+                      <div className="w-full lg:w-[55%] h-[350px] sm:h-[450px] lg:h-full rounded-2xl overflow-hidden">
                         {pkg.gallery ? (
-                          <GallerySlider gallery={pkg.gallery} />
+                          <GallerySlider gallery={pkg.gallery.filter(g => g.image !== pkg.image)} slidesPerView={2} />
                         ) : (
-                          <div className="relative h-full w-full">
-                            {pkg.image ? (
-                              <Image
-                                src={pkg.image}
-                                alt={name}
-                                fill
-                                className="object-cover"
-                              />
-                            ) : (
-                              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                                <Trees className="size-12 text-primary/20" />
-                              </div>
-                            )}
+                          <div className="h-full w-full rounded-xl bg-black/20 flex items-center justify-center">
+                            <Trees className="size-12 text-white/20" />
                           </div>
                         )}
                       </div>
 
-                      {/* Info panel */}
-                      <div className="flex flex-col h-[calc(90vh-300px)] sm:h-[calc(90vh-400px)] lg:h-full overflow-y-auto p-6 sm:p-10 lg:p-12 bg-white/50">
-                        <DialogHeader className="pr-10 text-left">
-                          <div className="flex items-center justify-between mb-2">
+                    </div>
+
+                    <DialogContent className="max-w-3xl overflow-hidden p-0 border-none bg-background rounded-[2rem] sm:rounded-[2.5rem]">
+                      <div className="p-8 sm:p-10 lg:p-12 space-y-8 max-h-[85vh] overflow-y-auto scrollbar-hide">
+                        <DialogHeader className="text-left space-y-4">
+                          <div className="flex items-center justify-between">
                             {badge && (
-                              <Badge variant="default" className="bg-primary text-white border-none px-3 py-1 text-[10px] font-bold uppercase tracking-wider">
+                              <Badge className="bg-primary text-white border-none px-3 py-1 text-[10px] font-bold uppercase tracking-widest">
                                 {badge}
                               </Badge>
                             )}
-                            <div className="text-xl font-bold text-primary">{pkg.price}</div>
+                            {pkg.price && <div className="text-lg font-bold text-primary">{pkg.price}</div>}
                           </div>
-                          <DialogTitle className="text-3xl font-bold text-gray-900 tracking-tight font-heading">{name}</DialogTitle>
-                          <DialogDescription className="text-lg text-primary/70 mt-2 font-medium">{subtitle}</DialogDescription>
+                          <DialogTitle className="text-3xl sm:text-4xl font-bold tracking-tight font-heading">{name}</DialogTitle>
+                          <DialogDescription className="text-base font-medium text-primary/80 leading-relaxed">{subtitle}</DialogDescription>
                         </DialogHeader>
 
-                        <div className="mt-6 space-y-6">
-                          <div className="flex flex-wrap gap-16 text-sm font-bold uppercase tracking-widest text-muted-foreground/80">
-                            <span className="flex items-start gap-2 whitespace-pre-line"><Users className="size-5 text-primary mt-0.5" /> {audience}</span>
-                            <span className="flex items-center gap-2"><Clock className="size-5 text-primary" /> {duration}</span>
-                          </div>
+                        <div className="flex flex-wrap gap-8 text-sm font-bold uppercase tracking-widest text-muted-foreground">
+                          <span className="flex items-center gap-2"><Users className="size-4 text-primary" /> <span className="whitespace-pre-line">{audience}</span></span>
+                          <span className="flex items-center gap-2"><Clock className="size-4 text-primary" /> {duration}</span>
+                        </div>
 
-                          <p className="leading-7 text-gray-600">{description}</p>
+                        <p className="leading-relaxed text-sm lg:text-base text-muted-foreground">{description}</p>
 
-                          <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
-                            <div className="mb-4 inline-flex items-center gap-2 text-base font-medium text-emerald-700">
-                              <ShieldCheck className="size-4" />
-                              {lang === "id" ? "Sorotan" : "Highlights"}
-                            </div>
-                            <ul className="space-y-3 text-base leading-6 text-gray-600">
-                              {features.map((feature, i) => (
-                                <li key={i} className="flex gap-3">
-                                  <Check className="mt-1 size-3.5 shrink-0 text-emerald-500" />
-                                  <span>{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
+                        <div className="rounded-2xl border border-primary/10 bg-primary/[0.03] p-6 sm:p-8">
+                          <div className="mb-5 inline-flex items-center gap-2.5 text-base font-semibold text-emerald-700">
+                            <ShieldCheck className="size-5" />
+                            {lang === "id" ? "Sorotan Pengalaman" : "Experience Highlights"}
                           </div>
+                          <ul className="grid gap-4 sm:grid-cols-2">
+                            {features.map((feature, i) => (
+                              <li key={i} className="flex gap-3 items-start">
+                                <Check className="mt-1 size-4 shrink-0 text-emerald-500" />
+                                <span className="text-sm lg:text-base text-muted-foreground leading-snug">{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <div className="pt-2">
+                          <Button asChild className="w-full sm:w-auto rounded-full h-14 px-10 font-bold text-base transition-all duration-300 shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1">
+                            <a href="https://pertiwiadventure.com/bookings/" target="_blank" rel="noreferrer">
+                              {lang === "id" ? "Pesan Sekarang" : "Book Now"}
+                            </a>
+                          </Button>
                         </div>
                       </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
+                    </DialogContent>
+                  </Dialog>
+                </div>
               </SectionReveal>
             );
           })}
